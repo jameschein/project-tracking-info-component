@@ -137,15 +137,9 @@ li a {
 }
 
 li a hr {
-    border: none;
-    display: block;
-    height:2px;
-    background-color: var(--header-color);
-    width:0%;
-    transition: width 250ms ease-in-out;
+   
     visibility:hidden;
-    transform: translate(-50%, -50%);
-    margin-left: 50%;
+   
 }
 
 li a:hover hr {
@@ -289,9 +283,20 @@ footer span {
         padding-block:2.9rem 8rem;
     }
 
+    li a hr {
+        border: none;
+        display: block;
+        height:2px;
+        background-color: var(--header-color);
+        width:0%;
+        transition: width 100ms ease-in-out;
+        visibility:hidden;
+        transform: translate(-50%, -50%);
+        margin-left: 50%;
+    }
+
     li a:hover hr {
        transition: width 150ms ease-in-out;
-    
     }
     
     
