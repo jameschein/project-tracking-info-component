@@ -72,6 +72,8 @@ nav .menu-trigger {
 }
 
 nav:hover .menu-trigger {
+    width:27px;
+    height:30px;
     background-image: url('images/icon-close.svg');
 }
 
@@ -150,7 +152,6 @@ li a:hover hr {
     border: none;
     height:2px;
     width:18%;
-    transition: width 150ms ease-in-out;
     visibility:visible;
 }
 
@@ -286,6 +287,11 @@ footer span {
 
     header {
         padding-block:2.9rem 8rem;
+    }
+
+    li a:hover hr {
+       transition: width 150ms ease-in-out;
+    
     }
     
     
