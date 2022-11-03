@@ -4,6 +4,7 @@
     font-size:1em;
     text-decoration: none;
     text-transform: uppercase;
+    list-style: none;
 }
 
 
@@ -19,10 +20,8 @@
 body {
     font-family: var(--body-text);
     color: var(--text-color);
-    font-size:132%;
+    font-size:100%;
     line-height: 1.5;
-    
-
 }
 
 .wrapper {
@@ -30,15 +29,14 @@ body {
     z-index: 1;  
 }
 
-
 .bgd-box {
-    background-color:#EDF2F6;
-    width:50%;
-    height:36rem;
-    position:absolute;
-    right:0;
-    top:0;
-    border-bottom-left-radius: 100px;
+    background-color: #EDF2F6;
+    width: 48%;
+    height: 27rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 50px;
     z-index: -1;
 }
 
@@ -57,6 +55,7 @@ header {
     border:none;
     color:white;
     background-color: transparent;
+    cursor: pointer;
 }
 
 
@@ -64,29 +63,59 @@ header {
     display:none;
 }
 
+li {
+    
+    font-weight: 700;
+}
+
+li a {
+    color:var(--header-color);
+    letter-spacing: 1px;
+}
+
+li a hr {
+    display: block;
+    width:0%;
+    transition: width 250ms ease-in-out;
+    visibility:hidden;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+}
+
+li a:hover hr {
+    width:94%;
+    transition: width 150ms ease-in-out;
+    visibility:visible;
+}
+
+li:last-child a:hover {
+}
+
+li:last-child a {
+    color:var(--text-color);
+}
 
 main {
-    padding-top: 31.5rem;
+    padding-top: 22.5rem;
     background-image: url(images/illustration-devices.svg);
     background-repeat: no-repeat;
     background-size: 137%;
-    background-position: 0 2rem;  
+    background-position: 0 2rem;
 }
-
 
 h2 {
     font-family: var(--header-text);
-    font-size:3.175rem;
+    font-size:2.5rem;
     line-height: 1;
-    margin-block:1rem 1.5rem;
+    margin-block:1rem;
     color:var(--header-color)
 }
 
 h3 {
     font-family: var(--header-text);
-    font-weight:400;
-    font-size:1.25rem;
-    letter-spacing: 6px;
+    font-weight: 400;
+    font-size: .9rem;
+    letter-spacing: 5px;
 }
 
 h3 span {
@@ -94,16 +123,16 @@ h3 span {
     padding:.25rem 1rem;
     background-color: var(--header-color);
     border-radius: 50px;
-    font-weight: 400;
+    font-weight: 700;
     color:var(--highlight);
     letter-spacing: 1px;
     margin-inline:0 .5rem;
 }
 
 p {
-    padding-inline:0 6rem;
+    padding-inline: 0rem;
     text-transform: none;
-    
+    font-size: 1.2rem;
 }
 
 .direction {
@@ -111,22 +140,32 @@ p {
     padding-inline: 0;
     font-family: var(--header-text);
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: .9rem;
+}
+
+.copy {
+    margin-block:2rem;
 }
 
 .cta {
     display:inline-block;
     color:var(--highlight);
     background-color:var(--button-color);
-    padding:1rem 2rem;
+    padding:.5rem 1rem;
     border-radius: 5px;
     margin-block: 1rem;
     margin-inline: 0 .75rem;
     font-weight: 700;
-    font-size: .9rem;
-    
+    font-size: .8rem;
+    transition:background-color 250ms ease-in-out;
 
 }
+
+.cta:hover, .cta:focus {
+    background-color: var(--header-color);
+    transition:background-color 250ms ease-in-out;
+}
+
 
 
 footer.bgd-box {
@@ -157,27 +196,59 @@ footer span {
 @media only screen and (min-width:768px)  {
 
     header, main {
-        padding:4.5rem 12rem;
+        padding:2.9rem 10rem;
+    }
+
+    header {
+        padding-block:2.9rem 8rem;
     }
     
     
     main {
         display: grid;
         grid-template-areas: "copy .";
-        grid-template-columns: 50% 1fr;
-        padding-block: 6rem 9rem;
+        grid-template-columns: 45% 1fr;
+        padding-block: 0 9rem;
         background-image: url(images/illustration-devices.svg);
         background-repeat: no-repeat;
-        background-size: 70%;
-        background-position: 165% 2rem;  
+        background-size: 67%;
+        background-position: 157% 0rem;  
     }
+
 
     .copy {
         grid-area: copy;
+        margin-block:2rem;
     }
 
+    h2 {
+       font-size:3.9rem; 
+       margin-block:1rem 1.5rem;
+    }
+
+    p {
+        padding-inline:0 12rem;
+        font-size: 1.125rem;
+    }
+
+    .direction {
+        margin-block: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .cta {
+        font-size: 1rem;
+        padding:1rem 2rem;
+        letter-spacing: 1px;
+    }
+
+   
+    
+
     .bgd-box {
-        max-height:30vw;
+        max-height:29vw;
+        width:42.5rem;
+        border-bottom-left-radius:50px ;
     }
 
     .menu-trigger {
@@ -185,7 +256,12 @@ footer span {
     }
 
     .primary {
-        display: block;
+        width:24rem;
+        display: flex;
+        font-family: var(--header-text);
+        font-size: .9rem;
+        justify-content: space-between;
+
     }
 
     footer span {
