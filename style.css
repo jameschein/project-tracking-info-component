@@ -63,6 +63,15 @@ header {
 }
 
 
+.logo {
+    background-image: url('images/logo.svg');
+    width:30px;
+    height:30px;
+    text-indent: 9999px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
 
 nav .menu-trigger {
     display:block;
