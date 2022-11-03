@@ -49,7 +49,7 @@ body {
 
 
 
-header, main {
+header, main, footer {
     padding:2rem;
 }
 
@@ -93,12 +93,16 @@ nav:hover .menu-trigger.open {
 nav .menu .menu-trigger.close {
     background-color: var(--bgd-block);
     background-image: url('images/icon-close.svg');
-    width:30px;
-    height:30px;
+    background-size: 60%;
+    background-position: 50% 0;
+    width:24px;
+    height:24px;
     position: absolute;
-    right:22px;
+    right:20px;
     top:0;
     z-index:20;
+    padding:6px;
+    box-sizing: content-box;
     
 }
 
@@ -176,7 +180,7 @@ li a:hover hr {
     border: none;
     height:2px;
     width:18%;
-    visibility:visible;
+    visibility:hidden;
 }
 
 li:nth-child(2) a:hover hr {
@@ -198,9 +202,9 @@ li:last-child a {
     padding-block:1rem;
 }
 
-li .separator {
-    display: none;
-}
+
+
+
 
 main {
     padding-top: 22.5rem;
@@ -273,22 +277,20 @@ p {
     transition:background-color 250ms ease-in-out;
 }
 
-
-
-
+  
 footer {
-    padding:0;
-    margin:0
+    padding-bottom:0;
 }
 
-    
-.attribution {
+footer .attribution {
     text-align: left;
     font-weight: 400;
     letter-spacing: 1px;
     font-family: var(--header-text);
-    padding-block: 0 1rem;
+    padding-block: 0 .25rem;
 }
+
+
 
 footer a:link, footer a:visited {
     color:var(--header-color);
@@ -296,33 +298,100 @@ footer a:link, footer a:visited {
 
 footer span {
     display: block;
-    padding-block:.25rem;   
+    padding-block:0rem;   
 }
 
 footer:before {
+    display: block;
     background-color: #EDF2F6;
     content: '';
-    width:75%;
+    width:10%;
     height:3rem;
     position:static;
     border-bottom-left-radius: 0;
     border-top-right-radius: 100px;
     padding:3rem 0rem 0rem 4rem;
+    margin-block: 0 1rem;
 }
 
 
 
 @media only screen and (min-width:768px)  {
 
-    header, main {
+    header, main, footer {
         padding:2.9rem 10rem;
     }
 
     header {
         padding-block:2.9rem 8rem;
     }
+    
+    footer {
+        padding-block:2rem;
+    }
 
-    li a hr {
+
+    li a:hover hr {
+        visibility:visible;
+    }
+
+    li:last-child a {
+        color:var(--text-color);
+        border:none;
+        padding-block:0;
+    }
+
+    li:last-child:before {
+        content:'•';
+        display: inline-block;
+        padding-inline:0 2.5rem;
+
+
+    }
+    
+
+    
+
+
+    nav .menu-trigger.close, 
+    nav .menu-trigger.open,
+    nav:hover .menu-trigger.close, 
+    nav:hover .menu-trigger.open  {
+        display:none;
+    }
+
+    nav .menu, 
+    nav:hover .menu {
+        position: static;
+        display: block;
+        opacity: 1;
+        background-color: transparent; 
+        width:96%;
+        padding:0;
+        margin:0;
+        transition: none;
+    } 
+
+    nav .menu .primary, 
+    nav:hover .menu .primary {
+        opacity:1;
+        width:24rem;
+        display: flex;
+        flex-direction: row;
+        font-family: var(--header-text);
+        font-size: .9rem;
+        justify-content: space-between;
+        box-shadow: none;
+        padding:0;
+        background-color: transparent;
+    }
+
+   
+    nav li a {
+        display: inline;
+    }
+
+    nav li a hr {
         border: none;
         display: block;
         height:2px;
@@ -334,16 +403,31 @@ footer:before {
         margin-left: 50%;
     }
 
-    li a:hover hr {
-       transition: width 150ms ease-in-out;
+    nav li a:hover hr,
+    nav li:nth-child(2) a:hover hr,
+    nav li:nth-child(3) a:hover hr,
+    nav li:last-child a:hover hr {
+        width:100%;
+        transition: width 150ms ease-in-out;
+    }
+
+    nav li:last-child a:hover hr {
+        width:50%;
+        transform: translate(-50%, -50%);
+        margin-left: 78%;
     }
     
     
+   
+
+
+
+
     main {
         display: grid;
         grid-template-areas: "copy .";
         grid-template-columns: 45% 1fr;
-        padding-block: 0 9rem;
+        padding-block: 0rem;
         background-image: url(images/illustration-devices.svg);
         background-repeat: no-repeat;
         background-size: 67%;
@@ -377,36 +461,16 @@ footer:before {
         letter-spacing: 1px;
     }
 
-   
-    
-
-    .bgd-box {
-        max-height:29vw;
-        width:42.5rem;
-        border-bottom-left-radius:50px ;
-    }
-
-    .menu-trigger {
-        display:none;
-    }
-
-    .primary {
-        width:24rem;
-        display: flex;
-        font-family: var(--header-text);
-        font-size: .9rem;
-        justify-content: space-between;
-
-    }
-
     footer span {
         display: inline-block;
         padding-inline:1rem;     
     }
 
-    footer.bgd-box {
-        padding-inline:12rem 0;
+    footer:before {
+        margin-block:0 1rem;
     }
+
+    
 
 
 
