@@ -39,11 +39,11 @@ body {
     display: block;
     background-color: var(--bgd-block);
     width: 48%;
-    height: 27rem;
+    height: 29rem;
     position: absolute;
     right: 0;
     top: 0;
-    border-bottom-left-radius: 50px;
+    border-bottom-left-radius: 75px;
     z-index: -1;
 }
 
@@ -57,6 +57,7 @@ header, main, footer {
 
 
 header {
+    padding-block:3rem 1rem;
     display: flex;
     justify-content: space-between;
 }
@@ -207,7 +208,7 @@ li:last-child a {
 
 
 main {
-    padding-top: 22.5rem;
+    padding-top: 87%;
     background-image: url(images/illustration-devices.svg);
     background-repeat: no-repeat;
     background-size: 137%;
@@ -216,7 +217,7 @@ main {
 
 h2 {
     font-family: var(--header-text);
-    font-size:2.5rem;
+    font-size:2.75rem;
     line-height: 1;
     margin-block:1rem;
     color:var(--header-color)
@@ -225,7 +226,7 @@ h2 {
 h3 {
     font-family: var(--header-text);
     font-weight: 400;
-    font-size: .9rem;
+    font-size: 1rem;
     letter-spacing: 5px;
 }
 
@@ -241,16 +242,16 @@ h3 span {
 }
 
 p {
-    padding-inline: 0rem;
+    padding-inline: 0 2rem;
     text-transform: none;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 .direction {
     padding-block:1rem;
     padding-inline: 0;
     font-family: var(--header-text);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-size: .9rem;
 }
 
@@ -262,13 +263,14 @@ p {
     display:inline-block;
     color:var(--highlight);
     background-color:var(--button-color);
-    padding:.5rem 1rem;
+    padding:1rem 2rem;
     border-radius: 5px;
     margin-block: 1rem;
     margin-inline: 0 .75rem;
     font-weight: 700;
-    font-size: .8rem;
+    font-size: .9rem;
     transition:background-color 250ms ease-in-out;
+    letter-spacing: 1px;
 
 }
 
