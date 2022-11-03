@@ -6,6 +6,7 @@
     text-transform: uppercase;
     list-style: none;
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 :root {
