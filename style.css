@@ -5,8 +5,8 @@
     text-decoration: none;
     text-transform: uppercase;
     list-style: none;
+    box-sizing: border-box;
 }
-
 
 :root {
     --text-color:#919199;
@@ -50,7 +50,9 @@ header {
     justify-content: space-between;
 }
 
-.menu-trigger {
+
+
+nav .menu-trigger {
     display:block;
     border:none;
     color:white;
@@ -59,23 +61,68 @@ header {
 }
 
 
-.primary {
-    display:none;
+nav .menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute; 
+    transition: opacity 250ms ease-in-out;  
 }
 
-li {
+nav:hover .menu {
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent; 
+    width:80vw;
+    padding:3rem 2rem 0;
+    margin-left:-36vw;
+    top:2rem;
+    left:50%;
+    transition: opacity 250ms ease-in-out;
+     
+}
+
+
+nav .menu .primary {
+    opacity:0;
+    display:none;
     
+}
+
+nav:hover .menu .primary {
+    opacity:1;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    padding:.5rem 0rem;
+    background-color: white;
+    box-shadow: 0px 0px 20px var(--text-color);
+    
+}
+
+
+
+li {
+    text-align: center;
     font-weight: 700;
+    margin-block: .5rem;
+    font-family: var(--header-text);
+    padding:0.25rem;
+}
+
+li span {
+    display: block;
 }
 
 li a {
+    display: block;
     color:var(--header-color);
     letter-spacing: 1px;
 }
 
 li a hr {
+    border: none;
     display: block;
-    height:1px;
+    height:2px;
     background-color: var(--header-color);
     width:0%;
     transition: width 250ms ease-in-out;
@@ -87,17 +134,32 @@ li a hr {
 li a:hover hr {
     border: none;
     height:2px;
-    width:94%;
+    width:18%;
     transition: width 150ms ease-in-out;
     visibility:visible;
 }
 
+li:nth-child(2) a:hover hr {
+    width:21%;
+}
+
+li:nth-child(3) a:hover hr {
+    width:16%;
+}
+
 li:last-child a:hover hr {
     background-color: var(--text-color);
+    width:12%;
 }
 
 li:last-child a {
     color:var(--text-color);
+    border-top:1px solid var(--text-color);
+    padding-block:1rem;
+}
+
+li .separator {
+    display: none;
 }
 
 main {
@@ -179,7 +241,7 @@ footer.bgd-box {
     position:static;
     border-bottom-left-radius: 0;
     border-top-right-radius: 100px;
-    padding:3rem 2rem 1rem;
+    padding:3rem 2rem 6rem;
 }
     
 .attribution {
@@ -187,6 +249,7 @@ footer.bgd-box {
     font-weight: 400;
     letter-spacing: 1px;
     font-family: var(--header-text);
+    padding-block: 0 1rem;
 }
 
 footer a:link, footer a:visited {
@@ -197,6 +260,8 @@ footer span {
     display: block;
     padding-block:.25rem;   
 }
+
+
 
 @media only screen and (min-width:768px)  {
 
