@@ -75,6 +75,8 @@ li a {
 
 li a hr {
     display: block;
+    height:1px;
+    background-color: var(--header-color);
     width:0%;
     transition: width 250ms ease-in-out;
     visibility:hidden;
@@ -88,7 +90,8 @@ li a:hover hr {
     visibility:visible;
 }
 
-li:last-child a:hover {
+li:last-child a:hover hr {
+    background-color: var(--text-color);
 }
 
 li:last-child a {
