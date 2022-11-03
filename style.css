@@ -72,9 +72,9 @@ nav:hover .menu {
     visibility: visible;
     opacity: 1;
     background-color: transparent; 
-    width:80vw;
+    width:100vw;
     padding:3rem 2rem 0;
-    margin-left:-36vw;
+    margin-left:-50vw;
     top:2rem;
     left:50%;
     transition: opacity 250ms ease-in-out;
